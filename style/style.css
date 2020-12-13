@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    min-height: 100vh;
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    border-radius: 15px;
+    max-width: 700px;
+}
+
+.drawer {
+    flex: 110%;
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-position: top 0 left -15px;
+}
+
+.content {
+    padding: 30px 40px;
+}
+
+.title {
+    font-size: 1.3rem;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+}
+
+.text {
+    color: var(--desaturated-dark-blue);
+    line-height: 20px;
+    margin: 16px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.author {
+    display: flex;
+    gap: 16px;
+}
+
+.author img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.author article p {
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.author article span {
+    color: var(--grayish-blue);
+}
+
+.footer button {
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.share-tooltip {
+    list-style: none;
+    background-color: var(--very-dark-grayish-blue);
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: -75px;
+    right: -110px;
+}
+
+.share-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 115px;
+    border: 10px solid transparent;
+    border-top-color: var(--very-dark-grayish-blue);
+}
+
+.share-tooltip li {
+    display: inline-block;
+    letter-spacing: 5px;
+    line-height: 40px;
+    margin: 0 5px;
+}
+
+.share-tooltip li a {
+    text-decoration: none;
+    color: var(--grayish-blue);
+}
+
+.share-tooltip li a:hover {
+    opacity: 0.6;
+}
+
+.socials {
+    vertical-align: middle;
+}
