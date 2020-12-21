@@ -28,6 +28,8 @@ body {
     display: flex;
     border-radius: 15px;
     max-width: 700px;
+    position: relative;
+    box-shadow: 10px 21px 30px 0px rgba(158,175,194,0.2);
 }
 
 .drawer {
@@ -82,7 +84,7 @@ body {
     color: var(--grayish-blue);
 }
 
-.footer button {
+button {
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -90,11 +92,13 @@ body {
     cursor: pointer;
 }
 
-.footer button:hover {
+button:hover {
     background-color: var(--very-dark-grayish-blue);
 }
 
 .share-tooltip {
+    display: none;
+    justify-content: space-around;
     list-style: none;
     background-color: var(--very-dark-grayish-blue);
     width: 250px;
@@ -114,6 +118,10 @@ body {
     border-top-color: var(--very-dark-grayish-blue);
 }
 
+.share-tooltip-visible {
+    display: flex;
+}
+
 .share-tooltip li {
     display: inline-block;
     letter-spacing: 5px;
@@ -130,6 +138,87 @@ body {
     opacity: 0.6;
 }
 
+.share-mobile {
+    display: none;
+}
+
 .socials {
     vertical-align: middle;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 44px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 599px) {
+    .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        height: 95vh;
+        max-width: 90%;
+        margin: 10% 0;
+    }
+
+    .drawer {
+        border-radius: 15px 15px 0 0;
+        background-position: top 0 left 0;
+        width: 100%;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .title {
+        margin-top: 24px;
+        font-size: 1.4rem;
+        padding: 10px 30px 0 30px;
+    }
+
+    .text {
+        font-size: 1rem;
+        line-height: initial;
+        padding: 10px 30px 20px 30px;
+    }
+
+    .author {
+        padding: 0 30px 30px 30px;
+    }
+
+    .author-no-padding {
+        padding: 0;
+    }
+
+    #btn-share {
+        margin-right: 20px;
+    }
+
+    .share-tooltip {
+        position: absolute;
+        left: 0;
+        top: -2vh;
+        width: 90vw;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .share-tooltip::after {
+        bottom: 0;
+    }
+
+    .share-mobile {
+        display: flex !important;
+        width: 30%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .share-mobile button {
+        background-color: var(--grayish-blue);
+    }
 }
